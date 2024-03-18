@@ -26,7 +26,7 @@ export const MenuItemFactory = [
     items: [
       {
         label: 'Ensamblar',
-        icon: 'pi pi-fw pi-align-left',
+        icon: 'pi pi-fw pi-wrench',
         routerlink: '/assemble-furniture',
       },
       {
@@ -46,7 +46,7 @@ export const MenuItemFactory = [
       },
       {
         label: 'Verificar mueble',
-        icon: 'pi pi-fw pi-align-center',
+        icon: 'pi pi-fw pi-check',
         routerlink: '/verify-furniture',
       },
     ],
