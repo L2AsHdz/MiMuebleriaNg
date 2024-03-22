@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api/menuitem';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItemFactory } from './menu-options';
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',

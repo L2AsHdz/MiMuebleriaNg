@@ -6,17 +6,17 @@ export const MenuItemFactory = [
       {
         label: 'Nueva pieza',
         icon: 'pi pi-fw pi-plus',
-        routerlink: '/create-piece',
+        routerLink: ['part'],
       },
       {
         label: 'Borrar pieza',
         icon: 'pi pi-fw pi-trash',
-        routerlink: '/delete-piece',
+        routerLink: 'part',
       },
       {
         label: 'Ver piezas',
         icon: 'pi pi-fw pi-external-link',
-        routerlink: '/view-pieces',
+        routerLink: 'part',
       },
     ],
   },
@@ -27,27 +27,27 @@ export const MenuItemFactory = [
       {
         label: 'Ensamblar',
         icon: 'pi pi-fw pi-wrench',
-        routerlink: '/assemble-furniture',
+        routerLink: '/assemble-furniture',
       },
       {
         label: 'Editar',
         icon: 'pi pi-fw pi-pencil',
-        routerlink: '/edit-furniture',
+        routerLink: '/edit-furniture',
       },
       {
         label: 'Eliminar',
         icon: 'pi pi-fw pi-trash',
-        routerlink: '/delete-furniture',
+        routerLink: '/delete-furniture',
       },
       {
         label: 'Listar muebles',
         icon: 'pi pi-fw pi-align-justify',
-        routerlink: '/view-furniture',
+        routerLink: '/view-furniture',
       },
       {
         label: 'Verificar mueble',
         icon: 'pi pi-fw pi-check',
-        routerlink: '/verify-furniture',
+        routerLink: '/verify-furniture',
       },
     ],
   },
@@ -55,6 +55,6 @@ export const MenuItemFactory = [
   {
     label: 'Salir',
     icon: 'pi pi-fw pi-power-off',
-    routerlink: '/logout',
+    routerLink: '/logout',
   },
 ];
