@@ -1,9 +1,8 @@
 export class Part {
-  idPieza!: number;
-  nombre!: string;
-  precioUnidad!: number;
-  existencias!: number;
-  minimoExistencias!: number;
-  estado!: boolean;
+  pieceId!: number;
+  name!: string;
+  unitPrice!: number;
+  miniumStock!: number;
+  state!: boolean;
 
 }

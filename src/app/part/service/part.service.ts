@@ -9,7 +9,7 @@ import {Part} from "../model/part";
 export class PartService {
 
   constructor(private http:HttpClient) { }
-  private url: string = "http://localhost:8080/mim/api/part"
+  private url: string = "http://localhost:3000/mim/api/part"
   public getPart():Observable<Part []>{
     return this.http.get<Part []>(this.url);
   }
@@ -18,7 +18,7 @@ export class PartService {
     if(type === "Agregar"){
       return this.http.post<Part>(this.url,postData);
     }
-    return this.http.put(`${this.url}/${postData.idPieza}`,postData);
+    return this.http.put(`${this.url}/${postData.pieceId}`,postData);
   }
 
   public deletePart(idPieza:number){
