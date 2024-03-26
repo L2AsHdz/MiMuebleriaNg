@@ -13,6 +13,11 @@ import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AddEditPartComponent} from "./part/component/add-edit-part/add-edit-part.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {InputNumberModule} from "primeng/inputnumber";
+import {InputTextModule} from "primeng/inputtext";
+import {ToastModule} from "primeng/toast";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ConfirmationService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     DialogModule,
     BrowserAnimationsModule,
     AddEditPartComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputNumberModule,
+    InputTextModule,
+    ToastModule,
+    ConfirmDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

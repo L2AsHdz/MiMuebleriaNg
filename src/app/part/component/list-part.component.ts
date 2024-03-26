@@ -12,14 +12,12 @@ import { MessageService } from 'primeng/api';
 })
 export class ListPartComponent {
   parts!:Part[];
-  part!:Part;
-  partDialog:boolean = true;
+  selectPart:any = null;
 
-  displayAddModal = false;
+  displayAddEditModal = false;
   constructor(private partService:PartService, private messageService: MessageService, private confirmationService: ConfirmationService) {  }
 
   ngOnInit():void{
-    console.log("Mande solicitud");
     this.getPartList();
   }
   getPartList(){
@@ -29,31 +27,41 @@ export class ListPartComponent {
       }
     );
   }
-
-  editProduct(part: Part) {
-    this.part = {...part};
-    this.partDialog = true;
-  }
-
-  deleteProduct(part: Part) {
+  deletePart(part: Part) {
     this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + part.nombre + '?',
-      header: 'Confirm',
+      message: 'Esta seguro de eliminar: ' + part.nombre + '?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.parts = this.parts.filter(val => val.idPieza !== part.idPieza);
-        let {} = this.part;
-        this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
+        this.partService.deletePart(part.idPieza).subscribe(response=>{
+          this.parts = this.parts.filter(val => val.idPieza !== part.idPieza);
+          this.messageService.add({severity:'success', summary: 'Successful', detail: `Parte: ${part.nombre} eliminada!`});
+        },
+          error => this.messageService.add({severity:'error', summary: 'Error', detail: error})
+        )
       }
     });
   }
 
   showAddModal (){
-    this.displayAddModal = true;
+    this.displayAddEditModal = true;
+    this.selectPart = null;
   }
 
   hideAddModal(isClose:boolean){
-    this.displayAddModal = !isClose;
+    this.displayAddEditModal = !isClose;
+  }
+//Se puede llamar al metodo para actulizar el listado en vez de las siguientes instrucciones
+  saveUpdatePartoToList(event:any){
+    if(this.selectPart.idPieza === event.idPieza){
+      const indexPart = this.parts.findIndex(dataSearch => dataSearch.idPieza === event.idPieza);
+      this.parts[indexPart] = event;
+    }else{
+      this.parts.unshift(event);
+    }
+  }
 
+  showEditModal(part:Part){
+    this.displayAddEditModal = true;
+    this.selectPart = part;
   }
 }

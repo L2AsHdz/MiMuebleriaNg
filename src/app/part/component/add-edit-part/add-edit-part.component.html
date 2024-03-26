@@ -1,0 +1,45 @@
+<p-dialog header="{{modalType}} Parte" [(visible)]="displayAddModal" [modal]="true" [style]="{width: '50vw'}"
+          [draggable]="false" [resizable]="false" (onHide)="closeModal()">
+
+  <form [formGroup]="partForm" >
+    <div class="field">
+      <label class="block" for="name">Nombre</label>
+      <input type="text" pInputText id="name" formControlName="nombre">
+      <small class="p-error block" *ngIf="partForm.controls['nombre'].invalid && partForm.controls['nombre'].dirty">
+        Nombre es requerido!
+      </small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="precioUnidad">Precio Unidad</label>
+      <p-inputNumber id="precioUnidad" formControlName="precioUnidad"></p-inputNumber>
+      <small class="p-error block" *ngIf="partForm.controls['precioUnidad'].invalid && partForm.controls['precioUnidad'].dirty">
+        Precio es requerido!
+      </small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="existencias">Existencias</label>
+      <p-inputNumber id="existencias" formControlName="existencias"></p-inputNumber>
+      <small class="p-error block" *ngIf="partForm.controls['existencias'].invalid && partForm.controls['existencias'].dirty">
+        Existencias es requerido!
+      </small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="minimoExistencias">Minimo existencias</label>
+      <p-inputNumber id="minimoExistencias" formControlName="minimoExistencias"></p-inputNumber>
+    </div>
+    <small class="p-error block" *ngIf="partForm.controls['minimoExistencias'].invalid && partForm.controls['minimoExistencias'].dirty">
+      Minimo existencias es requerido!
+    </small>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button  (click)="closeModal()" label="Cancelar" styleClass="p-button-text"></p-button>
+
+    <p-button (click)="addEdditPart()" label="{{modalType}}" styleClass="p-button-text" [disabled]="partForm.invalid"></p-button>
+
+  </ng-template>
+
+</p-dialog>

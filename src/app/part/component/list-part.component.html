@@ -29,11 +29,14 @@
       <td>{{part.minimoExistencias}}</td>
       <td>{{part.estado}}</td>
       <td>
-        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editProduct(part)">Edit</button>
-        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(part)">Delete</button>
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showEditModal(part)">Edit</button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deletePart(part)">Delete</button>
       </td>
     </tr>
   </ng-template>
 </p-table>
 
-<app-add-edit-part [displayAddModal]="displayAddModal"  (clickClose) = "hideAddModal($event)" ></app-add-edit-part>
+<app-add-edit-part [displayAddModal]="displayAddEditModal" (clickClose) = "hideAddModal($event)" (clickAddEdit)="saveUpdatePartoToList($event)" [selectPart]="selectPart"></app-add-edit-part>
+
+<p-confirmDialog></p-confirmDialog>
+<p-toast position="bottom-right"></p-toast>
