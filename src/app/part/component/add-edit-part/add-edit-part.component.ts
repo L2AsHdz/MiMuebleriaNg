@@ -33,12 +33,11 @@ export class AddEditPartComponent implements OnChanges{
 
   partForm = this.formMap.group(
     {
-      nombre : ["",Validators.required],
-      precioUnidad : [0,Validators.required],
-      existencias : [0,Validators.required],
-      minimoExistencias : [0,Validators.required],
-      estado : [true],
-      idPieza : [null]
+      name : ["",Validators.required],
+      unitPrice : [0,Validators.required],
+      miniumStock : [0,Validators.required],
+      state : [true],
+      pieceId : [null]
     }
   );
   closeModal(){
