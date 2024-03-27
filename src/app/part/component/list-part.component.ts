@@ -29,12 +29,12 @@ export class ListPartComponent {
   }
   deletePart(part: Part) {
     this.confirmationService.confirm({
-      message: 'Esta seguro de eliminar: ' + part.nombre + '?',
+      message: 'Esta seguro de eliminar: ' + part.name + '?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.partService.deletePart(part.idPieza).subscribe(response=>{
-          this.parts = this.parts.filter(val => val.idPieza !== part.idPieza);
-          this.messageService.add({severity:'success', summary: 'Successful', detail: `Parte: ${part.nombre} eliminada!`});
+        this.partService.deletePart(part.pieceId).subscribe(response=>{
+          this.parts = this.parts.filter(val => val.pieceId !== part.pieceId);
+          this.messageService.add({severity:'success', summary: 'Successful', detail: `Parte: ${part.name} eliminada!`});
         },
           error => this.messageService.add({severity:'error', summary: 'Error', detail: error})
         )
@@ -52,8 +52,11 @@ export class ListPartComponent {
   }
 //Se puede llamar al metodo para actulizar el listado en vez de las siguientes instrucciones
   saveUpdatePartoToList(event:any){
-    if(this.selectPart.idPieza === event.idPieza){
-      const indexPart = this.parts.findIndex(dataSearch => dataSearch.idPieza === event.idPieza);
+    console.log("Prueba save");
+    console.log(event);
+    console.log(this.selectPart);
+    if(this.selectPart != null && this.selectPart.pieceId === event.pieceId){
+      const indexPart = this.parts.findIndex(dataSearch => dataSearch.pieceId === event.pieceId);
       this.parts[indexPart] = event;
     }else{
       this.parts.unshift(event);
