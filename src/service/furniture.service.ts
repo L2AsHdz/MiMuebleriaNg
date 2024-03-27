@@ -14,7 +14,7 @@ export class FurnitureService {
   constructor(private httpClient: HttpClient ) { }
 
   getAllFurniture() {
-    return this.httpClient.get<Item[]>(`${this.apiUrl}/all`);
+    return this.httpClient.get<Item[]>(`${this.apiUrl}/summary`);
   }
   getFurnitureWithOutCheck(){
     return this.httpClient.get<Furniture[]>(`${this.apiUrl}/without-check`)

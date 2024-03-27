@@ -9,10 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AddEditPartComponent} from "./part/component/add-edit-part/add-edit-part.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InputNumberModule} from "primeng/inputnumber";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
-import {ConfirmationService} from "primeng/api";
+import {ConfirmationService, SharedModule} from "primeng/api";
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
@@ -27,6 +27,10 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import { SummaryInventoryComponent } from './factory/summary-inventory/summary-inventory.component';
 import { SummaryInventoryListComponent } from './factory/summary-inventory-list/summary-inventory-list.component';
 import { CheckFurnitureComponent } from './factory/check-furniture/check-furniture.component';
+import { AssembleFurnitureComponent } from './factory/assemble-furniture/assemble-furniture.component';
+import { TemplateFurnitureComponent } from './administration/template-furniture/template-furniture.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TemplateDetailsComponent } from './administration/component/template-details/template-details.component';
 
 
 @NgModule({
@@ -36,7 +40,10 @@ import { CheckFurnitureComponent } from './factory/check-furniture/check-furnitu
     ListPartComponent,
     SummaryInventoryComponent,
     SummaryInventoryListComponent,
-    CheckFurnitureComponent
+    CheckFurnitureComponent,
+    AssembleFurnitureComponent,
+    TemplateFurnitureComponent,
+    TemplateDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,13 @@ import { CheckFurnitureComponent } from './factory/check-furniture/check-furnitu
 		ToastModule,
     InputTextModule,
     ProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    InputTextareaModule,
+    DropdownModule,
+    SharedModule
+    
+    //MessageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

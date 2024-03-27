@@ -1,0 +1,18 @@
+<div *ngFor="let item of additionalItems" class="p-grid">
+  <div class="p-col-12 p-md-4">
+    <label>Selector Pieza</label>
+    <p-dropdown [options]="pieces" optionLabel="name" [(ngModel)]="item.piece" placeholder="Seleccione..." ></p-dropdown>
+  </div>
+  <div class="p-col-12 p-md-4 p-field">
+    <label>Cantidad</label>
+    <input type="text" class="form" [(ngModel)]="item.quantity" />
+  </div>
+</div>
+
+<div class="p-grid">
+  <div class="p-col-12 p-md-6">
+    <button type="button" pButton icon="pi pi-plus" (click)="agregarItem()">
+      Agregar Item
+    </button>
+  </div>
+</div>

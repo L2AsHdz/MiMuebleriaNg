@@ -31,14 +31,14 @@
             pInputText
             type="text"
             (input)="dt.filterGlobal($event, 'contains')"
-            placeholder="Search keyword"
+            placeholder="Buscar..."
           />
         </span>
       </div>
     </ng-template>
     <ng-template pTemplate="header">
       <tr>
-        <th style="width: 3rem"></th>
+        <th style="width: 3rem" *ngIf="checkVisible"></th>
         <th pSortableColumn="name" [pSortableColumnDisabled]="true">
           Nombre
           <p-sortIcon field="name"></p-sortIcon>
@@ -57,8 +57,8 @@
         <th>Acciones</th>
       </tr>
       <tr *ngIf="useFilter">
-        <th>
-          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        <th *ngIf="checkVisible">
+          <p-tableHeaderCheckbox ></p-tableHeaderCheckbox>
         </th>
         <th>
           <input
@@ -87,13 +87,13 @@
             class="p-column-filter"
           />
         </th>
-        <th></th>
+        <th   ></th>
         <th></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-item>
       <tr class="p-selectable-row">
-        <td>
+        <td *ngIf="checkVisible">
           <p-tableCheckbox [value]="item"></p-tableCheckbox>
         </td>
         <td>
@@ -104,7 +104,7 @@
           <span class="p-column-title">Cantidad</span>
           <span class="image-text">{{ item.amount }}</span>
           <p-progressBar
-            [value]="item.activity"
+            [value]="item.amount"
             [showValue]="true"
           ></p-progressBar>
         </td>

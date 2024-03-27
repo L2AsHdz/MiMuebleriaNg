@@ -1,0 +1,60 @@
+<div class="p-fluid p-grid">
+  <!-- Campo Nombre -->
+  <div class="p-field p-col-4 p-md-4">
+    <span class="p-float-label">
+      <input
+        type="text"
+        id="nombre"
+        class="form-control"
+        pInputText
+        [(ngModel)]="assembly.name"
+        name="nombre"
+        required
+      />
+      <label for="nombre">Nombre</label>
+    </span>
+  </div>
+
+  <div class="p-field p-col-4 p-md-4">
+    <span class="p-float-label">
+      <input
+        type="text"
+        id="instruccion"
+        class="form-control"
+        pInputText
+        [(ngModel)]="assembly.instructions"
+        name="instruccion"
+      />
+      <label for="instruccion">Instrucción</label>
+    </span>
+  </div>
+
+  <div class="p-field p-col-4 p-md-4">
+    <span class="p-float-label">
+      <input
+        type="text"
+        id="descripcion"
+        class="form-control"
+        pInputText
+        [(ngModel)]="assembly.description"
+        name="descripcion"
+      />
+      <label for="descripcion">Descripción</label>
+    </span>
+  </div>
+</div>
+<app-template-details
+  (additionalItemsChange)="onAdditionalItemsChange($event)"
+  #detalle>
+</app-template-details>
+<div class="p-grid">
+  <!-- Botón de envío -->
+  <div class="p-col-12 p-md-6">
+    <button
+      type="submit"
+      pButton
+      label="Enviar"
+      (click)="saveTemplate()"
+    ></button>
+  </div>
+</div>

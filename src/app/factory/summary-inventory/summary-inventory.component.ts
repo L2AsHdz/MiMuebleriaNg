@@ -14,6 +14,7 @@ export class SummaryInventoryComponent implements OnInit {
 
   @Input() items!: Item[];
   @Input() title !: string;
+  @Input() checkVisible : boolean = false;
 
   selectedItems!: Item[];
   statuses!: any[];
