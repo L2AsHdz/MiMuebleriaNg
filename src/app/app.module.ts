@@ -18,12 +18,16 @@ import {InputTextModule} from "primeng/inputtext";
 import {ToastModule} from "primeng/toast";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ConfirmationService} from "primeng/api";
+import {SidebarModule} from "primeng/sidebar";
+import { StartSaleComponent } from './customer/component/start-sale/start-sale.component';
+import {CardModule} from "primeng/card";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListPartComponent
+    ListPartComponent,
+    StartSaleComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import {ConfirmationService} from "primeng/api";
     InputNumberModule,
     InputTextModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    SidebarModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
