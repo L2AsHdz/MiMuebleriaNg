@@ -23,6 +23,7 @@ import { StartSaleComponent } from './customer/component/start-sale/start-sale.c
 import {CardModule} from "primeng/card";
 import { RegisterCustomerComponent } from './customer/component/register-customer/register-customer.component';
 import { SaleComponent } from './customer/component/sale/sale.component';
+import {SplitterModule} from "primeng/splitter";
 
 @NgModule({
   declarations: [
@@ -33,25 +34,26 @@ import { SaleComponent } from './customer/component/sale/sale.component';
     RegisterCustomerComponent,
     SaleComponent
   ],
-    imports: [
-        BrowserModule,
-        MenubarModule,
-        AppRoutingModule,
-        HttpClientModule,
-        TableModule,
-        ButtonModule,
-        DialogModule,
-        BrowserAnimationsModule,
-        AddEditPartComponent,
-        ReactiveFormsModule,
-        InputNumberModule,
-        InputTextModule,
-        ToastModule,
-        ConfirmDialogModule,
-        SidebarModule,
-        CardModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    MenubarModule,
+    AppRoutingModule,
+    HttpClientModule,
+    TableModule,
+    ButtonModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    AddEditPartComponent,
+    ReactiveFormsModule,
+    InputNumberModule,
+    InputTextModule,
+    ToastModule,
+    ConfirmDialogModule,
+    SidebarModule,
+    CardModule,
+    FormsModule,
+    SplitterModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

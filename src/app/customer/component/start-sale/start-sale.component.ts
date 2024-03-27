@@ -3,6 +3,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 import {CardModule} from 'primeng/card';
 import {CustomerService} from "../../service/customer.service";
 import {MessageService} from "primeng/api";
+import {NavigationExtras, Router} from "@angular/router";
 @Component({
   selector: 'app-start-sale',
   templateUrl: './start-sale.component.html',
@@ -12,7 +13,7 @@ import {MessageService} from "primeng/api";
 export class StartSaleComponent {
   showSlideModal:boolean = false;
   nit!:string;
-  constructor(private formMap:FormBuilder, private customerService:CustomerService) {
+  constructor(private formMap:FormBuilder, private customerService:CustomerService, private router:Router) {
   }
 
   saleForm = this.formMap.group({
@@ -31,7 +32,14 @@ export class StartSaleComponent {
   }
   findCustomerByNit(){
     this.customerService.getCustomerByNit(this.nit).subscribe(
-      response => console.log(response),
+      response => {
+        const navigationExtras: NavigationExtras = {
+          state:{
+            nit:this.nit
+          }
+        }
+        this.router.navigate(['/sale'],navigationExtras);
+      },
       error => {
         if(error.status === 404){
           this.showSlide();

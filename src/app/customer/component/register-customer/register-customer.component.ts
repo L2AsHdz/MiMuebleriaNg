@@ -3,6 +3,7 @@ import {Customer} from "../../model/customer";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../service/customer.service";
 import {MessageService} from "primeng/api";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-customer',
@@ -23,14 +24,14 @@ ngOnInit() {
   });
 }
 
-  constructor(private formMpa:FormBuilder, private customerService:CustomerService, private messageService:MessageService) {
+  constructor(private formMpa:FormBuilder, private customerService:CustomerService, private messageService:MessageService, private router:Router) {
 
    }
 
    addEditCustomer(){
      this.customerService.addEditCustomer(this.customerForm.value).subscribe(
        response => {
-         console.log(response);
+         this.router.navigate(['/sale']);
        },
        error => this.messageService.add({severity:'error',summary:'Error',detail:error.error})
      )

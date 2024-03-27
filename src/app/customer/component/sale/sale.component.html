@@ -1,1 +1,31 @@
-<p>sale works!</p>
+<div class="card">
+  <h2>Venta</h2>
+  <p-splitter [style]="{'height': '300px'}" [panelSizes]="[20,80]" [minSizes]="[10,0]" styleClass="mb-5">
+    <ng-template pTemplate>
+      <div class="col flex align-items-center justify-content-center">
+        Datos cliente
+      </div>
+    </ng-template>
+    <ng-template pTemplate>
+      <p-splitter layout="vertical" [panelSizes]="[15,85]">
+        <ng-template pTemplate>
+          <div style="flex-grow: 1;" class="flex align-items-center justify-content-center">
+            <div class="md:bg-left-bottom">
+              <h3>Nueva venta</h3>
+              <h5>Recuerda nuestros muebles son los mejores!</h5>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template pTemplate>
+          <p-splitter [panelSizes]="[20,80]">
+            <ng-template pTemplate>
+              <div class="col flex align-items-center justify-content-center">
+                Factura detalle (muebles)
+              </div>
+            </ng-template>
+          </p-splitter>
+        </ng-template>
+      </p-splitter>
+    </ng-template>
+  </p-splitter>
+</div>
