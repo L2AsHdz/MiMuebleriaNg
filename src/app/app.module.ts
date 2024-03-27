@@ -12,7 +12,7 @@ import {ButtonModule} from "primeng/button";
 import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AddEditPartComponent} from "./part/component/add-edit-part/add-edit-part.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
 import {ToastModule} from "primeng/toast";
@@ -21,32 +21,37 @@ import {ConfirmationService} from "primeng/api";
 import {SidebarModule} from "primeng/sidebar";
 import { StartSaleComponent } from './customer/component/start-sale/start-sale.component';
 import {CardModule} from "primeng/card";
+import { RegisterCustomerComponent } from './customer/component/register-customer/register-customer.component';
+import { SaleComponent } from './customer/component/sale/sale.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListPartComponent,
-    StartSaleComponent
+    StartSaleComponent,
+    RegisterCustomerComponent,
+    SaleComponent
   ],
-  imports: [
-    BrowserModule,
-    MenubarModule,
-    AppRoutingModule,
-    HttpClientModule,
-    TableModule,
-    ButtonModule,
-    DialogModule,
-    BrowserAnimationsModule,
-    AddEditPartComponent,
-    ReactiveFormsModule,
-    InputNumberModule,
-    InputTextModule,
-    ToastModule,
-    ConfirmDialogModule,
-    SidebarModule,
-    CardModule
-  ],
+    imports: [
+        BrowserModule,
+        MenubarModule,
+        AppRoutingModule,
+        HttpClientModule,
+        TableModule,
+        ButtonModule,
+        DialogModule,
+        BrowserAnimationsModule,
+        AddEditPartComponent,
+        ReactiveFormsModule,
+        InputNumberModule,
+        InputTextModule,
+        ToastModule,
+        ConfirmDialogModule,
+        SidebarModule,
+        CardModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

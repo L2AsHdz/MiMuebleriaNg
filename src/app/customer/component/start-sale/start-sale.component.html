@@ -3,14 +3,16 @@
   <ng-template pTemplate="header">
     <img alt="Card" src="assets/furniture.jpg">
   </ng-template>
-    <div class="field col-12 md:col-4">
+    <form (ngSubmit)="findCustomerByNit()" #clientForm="ngForm">
+        <div class="field col-12 md:col-4">
           <span class="p-float-label">
-              <input type="number" id="inputtext" pInputText>
+              <input [(ngModel)]="nit"  type="number" id="inputtext"  name="inputtext" pInputText>
               <label for="inputtext">Nit</label>
           </span>
-    </div>
-  <br>
-  <br>
-  <p-button label="Buscar Cliente" icon="pi pi-search" [style]="{'margin-left':'4em'}" ></p-button>
+        </div>
+      <p-button type="ngSubmit" [disabled]="!clientForm.form.valid" label="Buscar Cliente" icon="pi pi-search" [style]="{'margin-left':'4em'}"></p-button>
+    </form>
 </p-card>
 </div>
+<app-register-customer [showSlide]="showSlideModal" (clickClose)="hiddenSlideModal($event)" [nit]="nit"></app-register-customer>
+<p-toast position="bottom-right"></p-toast>
