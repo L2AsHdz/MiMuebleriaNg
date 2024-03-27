@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Assembly, AssemblyDetails } from 'src/models/model';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { AssemblyService } from 'src/service/piece.service copy';
-import { Route, Router, Routes } from '@angular/router';
+import { AssemblyService } from 'src/service/assembly.service';
+import { Router } from '@angular/router';
 import { TemplateDetailsComponent } from '../component/template-details/template-details.component';
 
 @Component({
@@ -21,7 +20,6 @@ export class TemplateFurnitureComponent implements OnInit{
 
   constructor(
     private assemblyService: AssemblyService,
-    private router:Router,
     ){}
   ngOnInit(): void {
     this.assembly = new Assembly();
