@@ -7,23 +7,36 @@ import {MenubarModule} from 'primeng/menubar';
 import { ListPartComponent } from './part/component/list-part.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
-import {TableModule} from 'primeng/table';
-import {ButtonModule} from "primeng/button";
-import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AddEditPartComponent} from "./part/component/add-edit-part/add-edit-part.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {InputNumberModule} from "primeng/inputnumber";
-import {InputTextModule} from "primeng/inputtext";
-import {ToastModule} from "primeng/toast";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ConfirmationService} from "primeng/api";
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import {CalendarModule} from 'primeng/calendar';
+import {SliderModule} from 'primeng/slider';
+import {DialogModule} from 'primeng/dialog';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {ToastModule} from 'primeng/toast';
+import {InputTextModule} from 'primeng/inputtext';
+import {ProgressBarModule} from 'primeng/progressbar';
+import { SummaryInventoryComponent } from './factory/summary-inventory/summary-inventory.component';
+import { SummaryInventoryListComponent } from './factory/summary-inventory-list/summary-inventory-list.component';
+import { CheckFurnitureComponent } from './factory/check-furniture/check-furniture.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListPartComponent
+    ListPartComponent,
+    SummaryInventoryComponent,
+    SummaryInventoryListComponent,
+    CheckFurnitureComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +52,20 @@ import {ConfirmationService} from "primeng/api";
     InputNumberModule,
     InputTextModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TableModule,
+    ButtonModule,
+    TableModule,
+    CalendarModule,
+		SliderModule,
+		DialogModule,
+		MultiSelectModule,
+		ContextMenuModule,
+		DropdownModule,
+		ToastModule,
+    InputTextModule,
+    ProgressBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
