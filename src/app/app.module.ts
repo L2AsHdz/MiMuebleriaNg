@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MenubarModule} from 'primeng/menubar';
@@ -12,6 +11,13 @@ import {AddEditPartComponent} from "./part/component/add-edit-part/add-edit-part
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InputNumberModule} from "primeng/inputnumber";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ConfirmationService} from "primeng/api";
+import {SidebarModule} from "primeng/sidebar";
+import { StartSaleComponent } from './customer/component/start-sale/start-sale.component';
+import {CardModule} from "primeng/card";
+import { RegisterCustomerComponent } from './customer/component/register-customer/register-customer.component';
+import { SaleComponent } from './customer/component/sale/sale.component';
+import {SplitterModule} from "primeng/splitter";
 import {ConfirmationService, SharedModule} from "primeng/api";
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
@@ -38,6 +44,9 @@ import { TemplateDetailsComponent } from './administration/component/template-de
     AppComponent,
     NavbarComponent,
     ListPartComponent,
+    StartSaleComponent,
+    RegisterCustomerComponent,
+    SaleComponent,
     SummaryInventoryComponent,
     SummaryInventoryListComponent,
     CheckFurnitureComponent,
@@ -60,6 +69,10 @@ import { TemplateDetailsComponent } from './administration/component/template-de
     InputTextModule,
     ToastModule,
     ConfirmDialogModule,
+    SidebarModule,
+    CardModule,
+    FormsModule,
+    SplitterModule,
     TableModule,
     ButtonModule,
     TableModule,
@@ -77,8 +90,6 @@ import { TemplateDetailsComponent } from './administration/component/template-de
     InputTextareaModule,
     DropdownModule,
     SharedModule
-    
-    //MessageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

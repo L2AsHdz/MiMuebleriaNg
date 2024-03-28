@@ -1,0 +1,38 @@
+<p-splitter [style]="{'height': '350px'}" [panelSizes]="[40,80]" [minSizes]="[10,0]" styleClass="mb-5">
+  <ng-template pTemplate>
+    <div class="col flex align-items-start justify-content-start">
+      <p-card header="Cliente" subheader="{{customer.name}}" [style]="{width: '300px'}" styleClass="p-card-shadow">
+        <div class="p-toast">
+          <i class="pi pi-circle"> Nit: {{customer.nit}}</i>
+        </div>
+        <br>
+        <div class="p-toast">
+          <i class="pi pi-phone"> Celular: {{customer.phone}}</i>
+        </div>
+        <br>
+        <br>
+        <div class="p-toast">
+          <i class="pi pi-id-card"> Vendedor: </i>
+        </div>
+      </p-card>
+    </div>
+  </ng-template>
+  <ng-template pTemplate>
+    <p-splitter layout="vertical" [panelSizes]="[15,85]">
+      <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center">
+          <h3>Nuestros muebles son los mejores, recuerdalo!</h3>
+        </div>
+      </ng-template>
+      <ng-template pTemplate>
+        <p-splitter [panelSizes]="[20,80]">
+          <ng-template pTemplate>
+            <div class="col flex align-items-center justify-content-center">
+              Panel 4
+            </div>
+          </ng-template>
+        </p-splitter>
+      </ng-template>
+    </p-splitter>
+  </ng-template>
+</p-splitter>

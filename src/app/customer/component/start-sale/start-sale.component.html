@@ -1,0 +1,18 @@
+<div class="col flex align-items-center justify-content-center">
+<p-card header="Inicio de venta" subheader="Por: David" [style]="{width: '360px'}" styleClass="p-card-shadow">
+  <ng-template pTemplate="header">
+    <img alt="Card" src="assets/furniture.jpg">
+  </ng-template>
+    <form (ngSubmit)="findCustomerByNit()" #clientForm="ngForm">
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+              <input [(ngModel)]="nit"  type="number" id="inputtext"  name="inputtext" pInputText>
+              <label for="inputtext">Nit</label>
+          </span>
+        </div>
+      <p-button type="ngSubmit" [disabled]="!clientForm.form.valid" label="Buscar Cliente" icon="pi pi-search" [style]="{'margin-left':'4em'}"></p-button>
+    </form>
+</p-card>
+</div>
+<app-register-customer [showSlide]="showSlideModal" (clickClose)="hiddenSlideModal($event)" [nit]="nit"></app-register-customer>
+<p-toast position="bottom-right"></p-toast>

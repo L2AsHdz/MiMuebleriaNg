@@ -1,0 +1,36 @@
+<p-sidebar [(visible)]="showSlide" position="right" [baseZIndex]="10000" (onHide)="closeModal()">
+  <h3>Registro de cliente</h3>
+  <h5>Actual nit no esta registrado, vamos a registrar!</h5>
+  <form  [formGroup]="customerForm">
+
+    <div class="field">
+      <label class="block" for="nit">Nit</label>
+      <p-inputNumber id="nit" formControlName="nit" [(ngModel)]="nit" [useGrouping]="false"></p-inputNumber>
+      <small class="p-error block" *ngIf="customerForm.controls['nit'].invalid && customerForm.controls['nit'].dirty">
+        Nit es requerido!
+      </small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="name">Nombre</label>
+      <input type="text" pInputText id="name" formControlName="name">
+      <small class="p-error block" *ngIf="customerForm.controls['name'].invalid && customerForm.controls['name'].dirty">
+        Nombre es requerido!
+      </small>
+    </div>
+
+    <div class="field">
+      <label class="block" for="phone">Telefono</label>
+      <p-inputNumber id="phone" formControlName="phone" [useGrouping]="false">{{nit}}</p-inputNumber>
+      <small class="p-error block" *ngIf="customerForm.controls['phone'].invalid && customerForm.controls['phone'].dirty">
+        Telefono es requerido!
+      </small>
+    </div>
+
+  </form>
+
+  <ng-template pTemplate="summary">
+    <p-button (click)="addEditCustomer()" label="Registrar" styleClass="p-button-text" [disabled]="customerForm.invalid"></p-button>
+  </ng-template>
+
+</p-sidebar>

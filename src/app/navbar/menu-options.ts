@@ -17,7 +17,7 @@ export const MenuItemFactory = [
         label: 'Ver piezas',
         icon: 'pi pi-fw pi-external-link',
         routerLink: 'part',
-      },
+      }
     ],
   },
   {
@@ -56,7 +56,11 @@ export const MenuItemFactory = [
       },
     ],
   },
-
+  {
+    label: 'Iniciar Venta',
+    icon: 'pi pi-user',
+    routerLink: 'start-sale'
+  },
   {
     label: 'Salir',
     icon: 'pi pi-fw pi-power-off',
