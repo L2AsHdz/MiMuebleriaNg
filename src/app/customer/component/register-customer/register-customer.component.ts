@@ -3,7 +3,7 @@ import {Customer} from "../../model/customer";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../service/customer.service";
 import {MessageService} from "primeng/api";
-import {Router} from "@angular/router";
+import {NavigationExtras, Router} from "@angular/router";
 
 @Component({
   selector: 'app-register-customer',
@@ -31,7 +31,12 @@ ngOnInit() {
    addEditCustomer(){
      this.customerService.addEditCustomer(this.customerForm.value).subscribe(
        response => {
-         this.router.navigate(['/sale']);
+         const navigationExtras: NavigationExtras = {
+           state:{
+             nit:this.nit
+           }
+         }
+         this.router.navigate(['/sale'],navigationExtras);
        },
        error => this.messageService.add({severity:'error',summary:'Error',detail:error.error})
      )
