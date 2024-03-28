@@ -25,6 +25,11 @@ export const MenuItemFactory = [
     icon: 'pi pi-fw pi-pencil',
     items: [
       {
+        label: 'Plantilla de mueble',
+        icon: 'pi pi-fw pi-wrench',
+        routerLink: '/template-furniture',
+      },
+      {
         label: 'Ensamblar',
         icon: 'pi pi-fw pi-wrench',
         routerLink: '/assemble-furniture',
@@ -40,14 +45,14 @@ export const MenuItemFactory = [
         routerLink: '/delete-furniture',
       },
       {
-        label: 'Listar muebles',
+        label: 'Inventario',
         icon: 'pi pi-fw pi-align-justify',
-        routerLink: '/view-furniture',
+        routerLink: '/summary-factory',
       },
       {
         label: 'Verificar mueble',
         icon: 'pi pi-fw pi-check',
-        routerLink: '/verify-furniture',
+        routerLink: '/check-furniture',
       },
     ],
   },

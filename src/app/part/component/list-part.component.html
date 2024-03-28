@@ -8,7 +8,6 @@
       <th [hidden]="true">Id</th>
       <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
       <th>Precio/Unidad</th>
-      <th>Existencias</th>
       <th>Minimo existencias</th>
       <th>Estado</th>
     </tr>
@@ -22,12 +21,11 @@
   </ng-template>
   <ng-template pTemplate="body" let-part>
     <tr>
-      <td [hidden]="true">{{part.idPieza}}</td>
-      <td>{{part.nombre}}</td>
-      <td>{{part.precioUnidad}}</td>
-      <td>{{part.existencias}}</td>
-      <td>{{part.minimoExistencias}}</td>
-      <td>{{part.estado}}</td>
+      <td [hidden]="true">{{part.pieceId}}</td>
+      <td>{{part.name}}</td>
+      <td>{{part.unitPrice}}</td>
+      <td>{{part.miniumStock}}</td>
+      <td>{{part.state}}</td>
       <td>
         <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showEditModal(part)">Edit</button>
         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deletePart(part)">Delete</button>
