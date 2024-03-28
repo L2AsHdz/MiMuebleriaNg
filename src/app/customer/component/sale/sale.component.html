@@ -1,31 +1,38 @@
-<div class="card">
-  <h2>Venta</h2>
-  <p-splitter [style]="{'height': '300px'}" [panelSizes]="[20,80]" [minSizes]="[10,0]" styleClass="mb-5">
-    <ng-template pTemplate>
-      <div class="col flex align-items-center justify-content-center">
-        Datos cliente
-      </div>
-    </ng-template>
-    <ng-template pTemplate>
-      <p-splitter layout="vertical" [panelSizes]="[15,85]">
-        <ng-template pTemplate>
-          <div style="flex-grow: 1;" class="flex align-items-center justify-content-center">
-            <div class="md:bg-left-bottom">
-              <h3>Nueva venta</h3>
-              <h5>Recuerda nuestros muebles son los mejores!</h5>
+<p-splitter [style]="{'height': '350px'}" [panelSizes]="[40,80]" [minSizes]="[10,0]" styleClass="mb-5">
+  <ng-template pTemplate>
+    <div class="col flex align-items-start justify-content-start">
+      <p-card header="Cliente" subheader="{{customer.name}}" [style]="{width: '300px'}" styleClass="p-card-shadow">
+        <div class="p-toast">
+          <i class="pi pi-circle"> Nit: {{customer.nit}}</i>
+        </div>
+        <br>
+        <div class="p-toast">
+          <i class="pi pi-phone"> Celular: {{customer.phone}}</i>
+        </div>
+        <br>
+        <br>
+        <div class="p-toast">
+          <i class="pi pi-id-card"> Vendedor: </i>
+        </div>
+      </p-card>
+    </div>
+  </ng-template>
+  <ng-template pTemplate>
+    <p-splitter layout="vertical" [panelSizes]="[15,85]">
+      <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center">
+          <h3>Nuestros muebles son los mejores, recuerdalo!</h3>
+        </div>
+      </ng-template>
+      <ng-template pTemplate>
+        <p-splitter [panelSizes]="[20,80]">
+          <ng-template pTemplate>
+            <div class="col flex align-items-center justify-content-center">
+              Panel 4
             </div>
-          </div>
-        </ng-template>
-        <ng-template pTemplate>
-          <p-splitter [panelSizes]="[20,80]">
-            <ng-template pTemplate>
-              <div class="col flex align-items-center justify-content-center">
-                Factura detalle (muebles)
-              </div>
-            </ng-template>
-          </p-splitter>
-        </ng-template>
-      </p-splitter>
-    </ng-template>
-  </p-splitter>
-</div>
+          </ng-template>
+        </p-splitter>
+      </ng-template>
+    </p-splitter>
+  </ng-template>
+</p-splitter>
