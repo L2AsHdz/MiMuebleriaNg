@@ -11,7 +11,6 @@ import {AddEditPartComponent} from "./part/component/add-edit-part/add-edit-part
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InputNumberModule} from "primeng/inputnumber";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
-import {ConfirmationService} from "primeng/api";
 import {SidebarModule} from "primeng/sidebar";
 import { StartSaleComponent } from './customer/component/start-sale/start-sale.component';
 import {CardModule} from "primeng/card";
